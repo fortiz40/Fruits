@@ -1,1 +1,29 @@
-<h1>HOME TEMPLATE</h1>
+{% extends "base.html" %}
+
+{% block body_content %}
+<table class ="fruit-data-table">
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Details</th>
+    </tr>
+    {% if fruits %}
+        {% for fruit in fruits %}
+        <tr class= "fruit-row">    
+            <td class= "fruit-data-cell">{{ fruit.name }}</td>
+            <td class= "fruit-data-cell">{{ fruit.description }} </td>
+            <td class= "fruit-data-cell">{{ fruit.price }} </td>
+            <td class="fruit-data-cell"> <a href="details/{{fruit.id}}"> View Details</a> </td>
+        </tr>    
+        {% endfor %}
+    {% else %}
+        <tr class="fruit-row">
+            <td>No fruit to display</td>
+        </tr>
+    {% endif %}
+
+
+</table>
+
+{% endblock body_content %}
