@@ -13,7 +13,16 @@ def fruits_home_view(request):
     }
     return render(request, "home.html", context)
 
-def fruit_detail_view(request): 
-    context = {}
+def fruit_detail_view(request, id): 
+    print(id)
+    print()
+    print()
+    print()
+    print()
 
-    return render(request, "detail.html", context)
+    fruit = Fruit.objects.get(id= id)
+    context = {
+        "fruit": fruit
+    }
+
+    return render(request, "details.html", context)
