@@ -1,1 +1,8 @@
-<h1>DETAIL TEMPLATE</h1>
+{% extends "base.html" %}
+
+{% block body_content %}
+
+    <h1>{{fruit.name}} </h1>
+    <p>{{fruit.description}} </p>
+{% endblock body_content %}
+
