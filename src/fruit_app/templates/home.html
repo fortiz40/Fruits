@@ -14,7 +14,7 @@
             <td class= "fruit-data-cell">{{ fruit.name }}</td>
             <td class= "fruit-data-cell">{{ fruit.description }} </td>
             <td class= "fruit-data-cell">{{ fruit.price }} </td>
-            <td class="fruit-data-cell"> <a href="details/{{fruit.id}}"> View Details</a> </td>
+            <td class="fruit-data-cell"> <a href="{% url 'fruit_detail' fruit.id %}"> View Details</a> </td>
         </tr>    
         {% endfor %}
     {% else %}
@@ -25,6 +25,6 @@
 
 </table>
 
-<a href="./create">Crate a new fruit</a>
+<a href="{% url 'fruit_create' %}">Crate a new fruit</a>
 
 {% endblock body_content %}

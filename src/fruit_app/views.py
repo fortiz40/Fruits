@@ -16,11 +16,6 @@ def fruits_home_view(request):
     return render(request, "home.html", context)
 
 def fruit_detail_view(request, id): 
-    print(id)
-    print()
-    print()
-    print()
-    print()
 
     fruit = Fruit.objects.get(id= id)
     context = {
