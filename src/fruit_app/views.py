@@ -1,6 +1,8 @@
 from django.shortcuts import render
 
 from .models import Fruit
+
+from .forms import FruitForm
 # Create your views here.
 
 def front_page_view(request):
@@ -26,3 +28,15 @@ def fruit_detail_view(request, id):
     }
 
     return render(request, "details.html", context)
+
+def fruit_create_view(request):
+    form = FruitForm(request.POST or None)
+
+    if form.is_valid():
+        form.save()
+
+    context = {
+        "fruit_form" : form
+    }
+
+    return render(request, 'create.html', context)
