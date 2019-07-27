@@ -7,7 +7,11 @@ def front_page_view(request):
     return render(request, "front-page.html")
 
 def fruits_home_view(request):
-    return render(request, "home.html", {})
+    queryset = Fruit.objects.all()
+    context = {
+        "fruits": queryset
+    }
+    return render(request, "home.html", context)
 
 def fruit_detail_view(request): 
     context = {}
