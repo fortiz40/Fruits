@@ -4,6 +4,7 @@
 
     <h1>{{fruit.name}} </h1>
     <p>{{fruit.description}} </p>
+    <a href="{% url 'fruit_delete' fruit.id %}">Delete</a>
     <a href="{% url 'fruits_home' %}">Go Back</a>
 {% endblock body_content %}
 

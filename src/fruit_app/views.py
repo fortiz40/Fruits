@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.urls import reverse
 
 from .models import Fruit
 
-from .forms import FruitForm
+from .forms import FruitForm, FruitDeleteForm
 # Create your views here.
 
 def front_page_view(request):
@@ -35,3 +36,20 @@ def fruit_create_view(request):
     }
 
     return render(request, 'create.html', context)
+
+def fruit_delete_view(request, id):
+    fruit = None
+    try:
+        fruit = Fruit.objects.get(id = id)
+    except:
+        return redirect("fruits_home")
+    form = FruitDeleteForm(request.POST or None) 
+    fruit.delete()
+    
+
+    context = {
+        "fruit" : fruit,
+        "fruit_delete_form": form
+    }
+
+    return render(request, 'delete.html', context)

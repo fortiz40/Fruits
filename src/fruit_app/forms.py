@@ -12,3 +12,12 @@ class FruitForm(forms.ModelForm):
             'price',
             'image'
         ]
+
+class FruitDeleteForm(forms.ModelForm):
+    
+    class Meta:
+        model = Fruit
+        fields = []
+
+    
+

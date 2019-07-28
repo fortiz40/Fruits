@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block body_content %}
+
+<h1>Are you sure you want to delete {{fruit.name}}?</h1>
+<p>Your action cannot be reversed</p>
+
+<form method="POST"> {% csrf_token %}
+    {{fruit_delete_form.as_}}
+    <input type="submit" value="Yes">
+</form>
+
+{% endblock body_content %}
+
