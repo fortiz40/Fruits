@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block body_content %}
+
+    <h1>Update details for {{ fruit.name }} </h1>
+    <form method="post"> {% csrf_token %}
+        {{ fruit_form.as_p }}
+        <input type="submit" value="Update">
+    </form>
+{% endblock body_content %}

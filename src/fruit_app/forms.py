@@ -19,5 +19,13 @@ class FruitDeleteForm(forms.ModelForm):
         model = Fruit
         fields = []
 
-    
+class FruitUpdateForm(forms.ModelForm):
+
+    class Meta:
+        model=  Fruit
+        fields = [
+            'description',
+            'price',
+            'image'
+        ]    
 

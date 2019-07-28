@@ -3,7 +3,7 @@ from django.urls import reverse
 
 from .models import Fruit
 
-from .forms import FruitForm, FruitDeleteForm
+from .forms import FruitForm, FruitDeleteForm, FruitUpdateForm
 # Create your views here.
 
 def front_page_view(request):
@@ -53,3 +53,20 @@ def fruit_delete_view(request, id):
     }
 
     return render(request, 'delete.html', context)
+
+def fruit_update_view(request, id):
+
+    fruit = Fruit.objects.get(id = id)
+    form = FruitUpdateForm(request.POST or None, instance = fruit)
+
+    if form.is_valid():
+        fruit= form.save(commit = False)
+        fruit.save()
+        return redirect("fruit_detail", id= id)
+
+    context = {
+        'fruit': fruit,
+        'fruit_form' : form 
+    }
+
+    return render(request, 'update.html', context)
