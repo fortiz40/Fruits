@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
 {% block body_content %}
-
     <h1>{{fruit.name}} </h1>
     <p>{{fruit.description}} </p>
+    <img src="{{fruit.imageurl}}" alt="Image" style= "height: 100px;">
     <a href="{% url 'fruit_update' fruit.id %}">Update</a>
     <a href="{% url 'fruit_delete' fruit.id %}">Delete</a>
     <a href="{% url 'fruits_home' %}">Go Back</a>
