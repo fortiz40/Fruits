@@ -1,11 +1,30 @@
 {% extends "base.html" %}
 
 {% block body_content %}
-    <h1>{{fruit.name}} </h1>
-    <p>{{fruit.description}} </p>
-    <img src="{{fruit.imageurl}}" alt="Image" style= "height: 100px;">
-    <a href="{% url 'fruit_update' fruit.id %}">Update</a>
-    <a href="{% url 'fruit_delete' fruit.id %}">Delete</a>
-    <a href="{% url 'fruits_home' %}">Go Back</a>
+
+    <div class="container-fluid">
+    
+        <div class="row">
+
+            <div class="col" style = "background-color: lightblue;">
+                    <h1>{{fruit.name}} </h1>
+                    <p>{{fruit.description}} </p>
+                    <a href="{% url 'fruit_update' fruit.id %}"><button class = "btn btn-warning">Edit</button></a>
+                    <a href="{% url 'fruit_delete' fruit.id %}"><button class = "btn btn-danger">Delete</button></a>
+                    <a href="{% url 'fruits_home' %}"><button class = "btn btn-secondary">Go Back</button></a>
+            </div>
+
+            <div class="col-8">
+                <img src="{{fruit.imageurl}}" alt="Image" style= "max-height: 600px; max-width:600px;">
+            </div>
+        
+        </div>
+    
+    </div>
+
+
+
+    
+
 {% endblock body_content %}
 
