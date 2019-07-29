@@ -44,7 +44,10 @@ def fruit_delete_view(request, id):
     except:
         return redirect("fruits_home")
     form = FruitDeleteForm(request.POST or None) 
-    fruit.delete()
+
+    if request.method == "POST":
+        fruit.delete()
+        return redirect("fruits_home")
     
 
     context = {

@@ -2,12 +2,13 @@
 
 {% block body_content %}
 
-<h1>Are you sure you want to delete {{fruit.name}}?</h1>
+<h1>Are you sure you want to delete "{{fruit.name}}"?</h1>
 <p>Your action cannot be reversed</p>
 
 <form method="POST"> {% csrf_token %}
-    {{fruit_delete_form.as_}}
-    <input type="submit" value="Yes">
+    {{fruit_delete_form.as_p}}
+    <button class="btn btn-danger">Yes <input  type="submit" value= "" name="delete" style= "display: none;"></button>
+    <a href="{% url 'fruits_home' %}"><button class="btn btn-secondary">Cancel</button></a>
 </form>
 
 {% endblock body_content %}
