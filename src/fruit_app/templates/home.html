@@ -1,22 +1,26 @@
 {% extends "base.html" %}
 
 {% block body_content %}
-<table class ="table">
+<table class ="table table-hover">
     <tr>
         <thead class="thead-dark">
             <th>Name</th>
             <th>Description</th>
             <th>Price</th>
             <th>Details</th>
+            <th>Update</th>
+            <th>Delete</th>
         </thead>
     </tr>
     {% if fruits %}
         {% for fruit in fruits %}
         <tr class= "fruit-row">    
-            <td class= "fruit-data-cell">{{ fruit.name }}</td>
-            <td class= "fruit-data-cell">{{ fruit.description }} </td>
-            <td class= "fruit-data-cell">{{ fruit.price }} </td>
-            <td class="fruit-data-cell"> <a href="{% url 'fruit_detail' fruit.id %}"> View Details</a> </td>
+            <td>{{ fruit.name }}</td>
+            <td>{{ fruit.description }} </td>
+            <td>${{ fruit.price }} </td>
+            <td><a href="{% url 'fruit_detail' fruit.id %}"><button class="btn btn-info">Details</button></a> </td>
+            <td><a href="{% url 'fruit_update' fruit.id %}"><button class = "btn btn-warning">Update</button></a></td>
+            <td><a href="{% url 'fruit_delete' fruit.id %}"><button class = "btn btn-danger">Delete</button></a></td>
         </tr>    
         {% endfor %}
     {% else %}
