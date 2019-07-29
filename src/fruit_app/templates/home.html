@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 
 {% block body_content %}
-<table class ="fruit-data-table">
+<table class ="table">
     <tr>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Price</th>
-        <th>Details</th>
+        <thead class="thead-dark">
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Details</th>
+        </thead>
     </tr>
     {% if fruits %}
         {% for fruit in fruits %}
