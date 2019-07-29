@@ -8,15 +8,19 @@
             <th>Description</th>
             <th>Price</th>
             <th>Details</th>
+            <th>Update</th>
+            <th>Delete</th>
         </thead>
     </tr>
     {% if fruits %}
         {% for fruit in fruits %}
         <tr class= "fruit-row">    
-            <td class= "fruit-data-cell">{{ fruit.name }}</td>
-            <td class= "fruit-data-cell">{{ fruit.description }} </td>
-            <td class= "fruit-data-cell">{{ fruit.price }} </td>
-            <td class="fruit-data-cell"> <a href="{% url 'fruit_detail' fruit.id %}"> View Details</a> </td>
+            <td>{{ fruit.name }}</td>
+            <td>{{ fruit.description }} </td>
+            <td>${{ fruit.price }} </td>
+            <td><a href="{% url 'fruit_detail' fruit.id %}"><button class="btn btn-info">Details</button></a> </td>
+            <td><a href="{% url 'fruit_update' fruit.id %}"><button class = "btn btn-warning">Update</button></a></td>
+            <td><a href="{% url 'fruit_delete' fruit.id %}"><button class = "btn btn-danger">Delete</button></a></td>
         </tr>    
         {% endfor %}
     {% else %}
@@ -24,9 +28,16 @@
             <td>No fruit to display</td>
         </tr>
     {% endif %}
-
+    
 </table>
 
-<a href="{% url 'fruit_create' %}">Crate a new fruit</a>
+{% comment %} <div class="footer" style= "background-color: black;height: 7vh; position: sticky; position: -webkit-sticky; bottom: 0; width: 100%;">
+    <a href="{% url 'fruit_create' %}">Create a new fruit</a>
+</div> {% endcomment %}
+
+<div class="navbar navbar-dark bg-dark" style= "position: sticky !important; position: -webkit-sticky !important; bottom: 0;">
+  <a class="navbar-brand" href="#">Sticky Bottom</a>
+</div>
+
 
 {% endblock body_content %}
