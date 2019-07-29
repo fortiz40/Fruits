@@ -3,7 +3,8 @@
 {% block body_content %}
 <form method="POST"> {% csrf_token %}
     {{fruit_form.as_p}}
-    <input type="submit" value="Create Fruit">
+    <input type="submit" value="Create Fruit" class ="btn btn-primary">
+    <a href="{% url 'fruits_home' %}" class="btn btn-secondary">Cancel</a>
 </form>
-<a href="{% url 'fruits_home' %}">Cancel</a>
+
 {% endblock body_content %}
