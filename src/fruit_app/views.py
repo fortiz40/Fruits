@@ -30,6 +30,7 @@ def fruit_create_view(request):
 
     if form.is_valid():
         form.save()
+        return redirect("fruits_home")
 
     context = {
         "fruit_form" : form
