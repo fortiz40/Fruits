@@ -8,7 +8,7 @@
 <form method="POST"> {% csrf_token %}
     {{fruit_delete_form.as_p}}
     <button class="btn btn-danger">Yes <input  type="submit" value= "" name="delete" style= "display: none;"></button>
-    <a href="{% url 'fruits_home' %}"><button class="btn btn-secondary">Cancel</button></a>
+    <a class="btn btn-secondary" href="{% url 'fruits_home' %}">Cancel</a>
 </form>
 
 {% endblock body_content %}

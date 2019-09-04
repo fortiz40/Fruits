@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
 {% block body_content %}
-<table class ="table">
+<table class ="table table-hover">
     <tr>
-        <thead class="thead-dark">
+        <thead class="thead-dark" style= "position: sticky !important; position: -webkit-sticky !important; top: 6vh;">
             <th>Name</th>
             <th>Description</th>
             <th>Price</th>
@@ -31,12 +31,8 @@
     
 </table>
 
-{% comment %} <div class="footer" style= "background-color: black;height: 7vh; position: sticky; position: -webkit-sticky; bottom: 0; width: 100%;">
-    <a href="{% url 'fruit_create' %}">Create a new fruit</a>
-</div> {% endcomment %}
-
 <div class="navbar navbar-dark bg-dark" style= "position: sticky !important; position: -webkit-sticky !important; bottom: 0;">
-  <a class="navbar-brand" href="#">Sticky Bottom</a>
+  <a class = "navbar-brand" href="{% url 'fruit_create' %}"><button class="btn btn-primary">Add Fruit</button></a>
 </div>
 
 

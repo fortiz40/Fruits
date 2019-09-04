@@ -18,8 +18,20 @@ from django.urls import path, include
 
 from fruit_app.views import front_page_view
 
+from . import settings
+from django.contrib.staticfiles.urls import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+ 
+ 
+# urlpatterns += staticfiles_urlpatterns()
+# urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('fruits/', include("fruit_app.urls")),
-    path('', front_page_view)
+    path('', front_page_view, name= "front_page")
 ]
+
+urlpatterns += staticfiles_urlpatterns()
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -25,7 +25,7 @@ SECRET_KEY = 'i^wqi_vbt5d)i+9)s437d8qcx^y6az3@9cs=p)s1b$yzmykhh)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['fortiz40.pythonanywhere.com']
+ALLOWED_HOSTS = ['fortiz40.pythonanywhere.com', '127.0.0.1']
 
 
 # Application definition
