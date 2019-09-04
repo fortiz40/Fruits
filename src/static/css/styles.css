@@ -1,4 +1,45 @@
 body {
     /* background-color: #1cb26e; */
+    font-family: 'Ubuntu', sans-serif;
+    /* min-height: 100vh; */
 }
 
+.front-page-content{
+    margin: auto;
+    background-image: url("fruits_circle.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 90vh;
+    width: 100vw;
+    /* position: relative; */
+}
+
+.main-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.list-view-footer{
+    height: 6vh;
+    position: absolute !important;
+    position: -webkit-absolute !important; 
+    bottom: 0; 
+    width: 100%;
+}
+
+.nav-spacer{
+    height: 6vh;
+}
+
+.table-header-spacer{
+    height: 5vh;
+}
+
+.table{
+    position: fixed;
+    margin-bottom: 15vh;
+    overflow-y: auto;
+}
